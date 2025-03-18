@@ -57,13 +57,16 @@ def main():
         return
 
     # Parameter setting
-    sigma = 12  # Adjust this value to control the blurring effect
-    size = 72  # Adjust this value to control the kernel size
-    # Generate low-frequency and high-frequency pictures
+
+    sigma = 10  
+    size = 60
+
+
     low_freq = hybrid.low_pass(img1, sigma, size)
     high_freq = hybrid.high_pass(img2, sigma, size)
+
     # Generate hybrid image
-    hybrid_image = 0.65 * low_freq + 0.35 * high_freq
+    hybrid_image = 0.5 * low_freq + 0.5 * high_freq
 
     # Save low-frequency, high-frequency and hybrid pictures
 
